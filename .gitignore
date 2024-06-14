@@ -1,7 +1,7 @@
 # Visual Studio and JetBrains Rider files
-/Backend/.vscode/
-/Backend/*.suo
-/Backend/*.ntvs*
+/Backend/.vs/
+/Backend*.suo
+/Backend*.ntvs*
 /Backend*.[Oo]bj
 /Backend*.user
 /Backend*.aps
