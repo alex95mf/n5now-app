@@ -1,3 +1,89 @@
+# Visual Studio and JetBrains Rider files
+/Backend/.vscode/
+/Backend/*.suo
+/Backend/*.ntvs*
+/Backend*.[Oo]bj
+/Backend*.user
+/Backend*.aps
+/Backend*.pch
+/Backend*.vspscc
+/Backend*_i.c
+/Backend*_p.c
+/Backend*.ncb
+/Backend*.sdf
+/Backend*.opensdf
+/Backend*.cachefile
+/Backend*.VC.db
+/Backend*.VC.VC.opendb
+/Backend*.VC.VC.db
+/Backend*.csproj.user
+/Backend*.bak
+/Backend*.cache
+/Backend*.compiled
+/Backend*.dll
+/Backend*.exe
+/Backend*.log
+/Backend*.pdb
+/Backend*.ipch/
+/Backend*.aps
+/Backend*.exp
+/Backend*.orig
+/Backend*.pidb
+/Backend*.suo
+/Backend*.tlb
+/Backend*.tlh
+/Backend*.tmp
+/Backend*.vcxproj.filters
+/Backend*.vspscc
+/Backend*.vssscc
+/Backend*.dll
+/Backend*.cache
+/Backend*.dbmdl
+/Backend*.jfm
+/Backend*.pch
+/Backend*.sbr
+/Backend*.ilk
+/Backend*.aps
+/Backend*.ncb
+/Backend*.opensdf
+/Backend*.sdf
+/Backend*.cachefile
+/Backend*.vcxproj.user
+/Backend*.vcproj.*
+/Backend*.VC.db
+/Backend*.VC.VC.opendb
+/Backend*.VC.VC.db
+
+# JetBrains Rider files
+/Backend/.idea/
+/Backend*.sln.iml
+/Backend*.ide
+
+# Compiled files
+/Backend/bin/
+/Backend/obj/
+
+# Packages folder
+/Backend/packages/
+
+# Node.js dependencies
+/Backend/node_modules/
+
+# TypeScript cache
+/Backend*.tsbuildinfo
+
+# Local environment variables
+/Backend/.env
+
+# macOS
+/Backend.DS_Store
+
+# Windows thumbnail cache files
+/BackendThumbs.db
+
+# React build output (create-react-app)
+/Frontend/build/
+
 # Logs
 logs
 *.log
