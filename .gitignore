@@ -1,89 +1,3 @@
-# Visual Studio and JetBrains Rider files
-/Backend/.vs/
-/Backend*.suo
-/Backend*.ntvs*
-/Backend*.[Oo]bj
-/Backend*.user
-/Backend*.aps
-/Backend*.pch
-/Backend*.vspscc
-/Backend*_i.c
-/Backend*_p.c
-/Backend*.ncb
-/Backend*.sdf
-/Backend*.opensdf
-/Backend*.cachefile
-/Backend*.VC.db
-/Backend*.VC.VC.opendb
-/Backend*.VC.VC.db
-/Backend*.csproj.user
-/Backend*.bak
-/Backend*.cache
-/Backend*.compiled
-/Backend*.dll
-/Backend*.exe
-/Backend*.log
-/Backend*.pdb
-/Backend*.ipch/
-/Backend*.aps
-/Backend*.exp
-/Backend*.orig
-/Backend*.pidb
-/Backend*.suo
-/Backend*.tlb
-/Backend*.tlh
-/Backend*.tmp
-/Backend*.vcxproj.filters
-/Backend*.vspscc
-/Backend*.vssscc
-/Backend*.dll
-/Backend*.cache
-/Backend*.dbmdl
-/Backend*.jfm
-/Backend*.pch
-/Backend*.sbr
-/Backend*.ilk
-/Backend*.aps
-/Backend*.ncb
-/Backend*.opensdf
-/Backend*.sdf
-/Backend*.cachefile
-/Backend*.vcxproj.user
-/Backend*.vcproj.*
-/Backend*.VC.db
-/Backend*.VC.VC.opendb
-/Backend*.VC.VC.db
-
-# JetBrains Rider files
-/Backend/.idea/
-/Backend*.sln.iml
-/Backend*.ide
-
-# Compiled files
-/Backend/bin/
-/Backend/obj/
-
-# Packages folder
-/Backend/packages/
-
-# Node.js dependencies
-/Backend/node_modules/
-
-# TypeScript cache
-/Backend*.tsbuildinfo
-
-# Local environment variables
-/Backend/.env
-
-# macOS
-/Backend.DS_Store
-
-# Windows thumbnail cache files
-/BackendThumbs.db
-
-# React build output (create-react-app)
-/Frontend/build/
-
 # Logs
 logs
 *.log
@@ -214,3 +128,33 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Backend specific ignores
+Backend/n5now-api/.vs/
+Backend/n5now-api/bin/
+Backend/n5now-api/obj/
+Backend/n5now-api/appsettings.Development.json
+Backend/n5now-api/appsettings.json
+Backend/n5now-api/n5now-api.deps.json
+Backend/n5now-api/n5now-api.runtimeconfig.json
+Backend/n5now-api/n5now-api.sln
+Backend/n5now-api/staticwebassets/
+
+# Frontend specific ignores (assuming a React setup)
+Frontend/node_modules/
+Frontend/.cache/
+Frontend/build/
+Frontend/coverage/
+Frontend/.env*
+Frontend/.eslintcache
+Frontend/.next/
+Frontend/.yarn/
+Frontend/out/
+Frontend/public/
+Frontend/.webpack/
+Frontend/yarn-error.log
+Frontend/yarn.lock
+
+# Ignore JetBrains IDE specific files
+*.iml
+.idea/
