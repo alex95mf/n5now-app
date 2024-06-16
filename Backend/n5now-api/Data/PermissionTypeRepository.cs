@@ -15,7 +15,7 @@ namespace n5now_api.Data
 
         public async Task<IEnumerable<PermissionType>> GetAllAsync()
         {
-            return await _context.PermissionTypes.ToListAsync();
+            return await _context.PermissionsTypes.ToListAsync();
         }
     }
 

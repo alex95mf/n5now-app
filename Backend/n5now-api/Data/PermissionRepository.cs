@@ -31,16 +31,19 @@ namespace n5now_api.Data
             return existingPermission;
         }
 
-        public async Task<IEnumerable<Permission>> GetAllPermissions()
+        public async Task<List<Permission>> GetAllPermissionsIncludingType()
         {
-            return await _context.Permissions.ToListAsync();
+            return await _context.Permissions
+                .Include(p => p.TipoPermisoDetalle)
+                .ToListAsync();
         }
+
     }
 
     public interface IPermissionRepository
     {
         Task<Permission> AddPermission(Permission permission);
         Task<Permission> UpdatePermission(Permission permission);
-        Task<IEnumerable<Permission>> GetAllPermissions();
+        Task<List<Permission>> GetAllPermissionsIncludingType();
     }
 }

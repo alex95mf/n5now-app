@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("n5now-api.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c3f64edd11cdfa2a5d82d71ea2dad1d845dc750")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9767b4cd85f7fee9b5091f5425610e69524f0c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("n5now-api.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("n5now-api.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

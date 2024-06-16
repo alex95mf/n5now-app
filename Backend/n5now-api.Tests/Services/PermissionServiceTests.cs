@@ -25,7 +25,7 @@ namespace n5now_api.Tests.Services
         [Fact]
         public async Task RequestPermission_ShouldAddPermission()
         {
-            var permission = new Permission { /* initialize properties */ };
+            var permission = new Permission { /* propiedades */ };
             _mockUnitOfWork.Setup(u => u.PermissionRepository.AddPermission(permission)).ReturnsAsync(permission);
 
             var result = await _permissionService.RequestPermission(permission);
@@ -59,19 +59,20 @@ namespace n5now_api.Tests.Services
             // Arrange
             var permissions = new List<Permission>
             {
-                new Permission { Id = 1, /* propiedades */ },
-                new Permission { Id = 2, /* propiedades */ },
-                new Permission { Id = 3, /* propiedades */ }
+                new Permission { Id = 1, NombreEmpleado = "Test1", ApellidoEmpleado = "User1", TipoPermiso = 1, FechaPermiso = DateTime.Now },
+                new Permission { Id = 2, NombreEmpleado = "Test2", ApellidoEmpleado = "User2", TipoPermiso = 2, FechaPermiso = DateTime.Now },
+                new Permission { Id = 3, NombreEmpleado = "Test3", ApellidoEmpleado = "User3", TipoPermiso = 1, FechaPermiso = DateTime.Now }
             };
-            _mockUnitOfWork.Setup(u => u.PermissionRepository.GetAllPermissions()).ReturnsAsync(permissions);
+            _mockUnitOfWork.Setup(u => u.PermissionRepository.GetAllPermissionsIncludingType()).ReturnsAsync(permissions);
+
 
             // Act
-            var result = await _permissionService.GetPermissions();
+            var result = await _permissionService.GetPermissionsIncludingType();
 
             // Assert
             Assert.NotNull(result);
             Assert.Equal(permissions.Count, result.Count()); // Asegurar numero correcto de permisos
-            _mockUnitOfWork.Verify(u => u.PermissionRepository.GetAllPermissions(), Times.Once);
+            _mockUnitOfWork.Verify(u => u.PermissionRepository.GetAllPermissionsIncludingType(), Times.Once);
         }
 
     }

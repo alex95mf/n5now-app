@@ -30,9 +30,9 @@ namespace n5now_api.Services
             return updatedPermission;
         }
 
-        public async Task<IEnumerable<Permission>> GetPermissions()
+        public async Task<List<Permission>> GetPermissionsIncludingType()
         {
-            return await _unitOfWork.PermissionRepository.GetAllPermissions();
+            return await _unitOfWork.PermissionRepository.GetAllPermissionsIncludingType();
         }
     }
 
@@ -47,6 +47,6 @@ namespace n5now_api.Services
     {
         Task<Permission> RequestPermission(Permission permission);
         Task<Permission> ModifyPermission(Permission permission);
-        Task<IEnumerable<Permission>> GetPermissions();
+        Task<List<Permission>> GetPermissionsIncludingType();
     }
 }

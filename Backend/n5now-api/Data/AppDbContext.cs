@@ -7,7 +7,15 @@ namespace n5now_api.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Permission> Permissions { get; set; }
-        public DbSet<PermissionType> PermissionTypes { get; set; }
+        public DbSet<PermissionType> PermissionsTypes { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Permission>()
+                .HasOne(p => p.TipoPermisoDetalle)
+                .WithMany() 
+                .HasForeignKey(p => p.TipoPermiso);
+        }
     }
 
     public class Permission
@@ -17,6 +25,8 @@ namespace n5now_api.Data
         public string ApellidoEmpleado { get; set; }
         public int TipoPermiso { get; set; }
         public DateTime FechaPermiso { get; set; }
+        public PermissionType TipoPermisoDetalle { get; set; }
+
     }
 
     public class PermissionType

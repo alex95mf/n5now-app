@@ -43,8 +43,16 @@ namespace n5now_api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPermissions()
         {
-            var result = await _permissionService.GetPermissions();
-            return Ok(result);
+            try
+            {
+                var permissions = await _permissionService.GetPermissionsIncludingType();
+                return Ok(permissions);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error al obtener los permisos: {ex.Message}");
+            }
         }
+
     }
 }
