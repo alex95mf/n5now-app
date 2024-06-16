@@ -36,8 +36,8 @@ namespace n5now_api.Data
             var permissions = await _context.Permissions
                .ToListAsync();
 
-            var permisoAdmin = new PermissionType() { Id = 1, Description = "Admin" };
-            var permisoUser = new PermissionType() { Id = 2, Description = "User" };
+            var permisoAdmin = new PermissionType() { Id = 1, Description = "Administrador" };
+            var permisoUser = new PermissionType() { Id = 2, Description = "Usuario" };
 
             var permissionsDetail = permissions.Select(p => new PermissionDetail
             {
