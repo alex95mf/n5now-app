@@ -11,7 +11,7 @@ namespace n5now_api.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Permission>()
+            modelBuilder.Entity<PermissionDetail>()
                 .HasOne(p => p.TipoPermisoDetalle)
                 .WithMany() 
                 .HasForeignKey(p => p.TipoPermiso);
@@ -19,6 +19,16 @@ namespace n5now_api.Data
     }
 
     public class Permission
+    {
+        public int Id { get; set; }
+        public string NombreEmpleado { get; set; }
+        public string ApellidoEmpleado { get; set; }
+        public int TipoPermiso { get; set; }
+        public DateTime FechaPermiso { get; set; }
+
+    }
+
+    public class PermissionDetail
     {
         public int Id { get; set; }
         public string NombreEmpleado { get; set; }

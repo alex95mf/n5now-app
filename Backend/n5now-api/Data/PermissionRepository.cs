@@ -31,11 +31,26 @@ namespace n5now_api.Data
             return existingPermission;
         }
 
-        public async Task<List<Permission>> GetAllPermissionsIncludingType()
+        public async Task<List<PermissionDetail>> GetAllPermissionsIncludingType()
         {
-            return await _context.Permissions
-                .Include(p => p.TipoPermisoDetalle)
-                .ToListAsync();
+            var permissions = await _context.Permissions
+               .ToListAsync();
+
+            var permisoAdmin = new PermissionType() { Id = 1, Description = "Admin" };
+            var permisoUser = new PermissionType() { Id = 2, Description = "User" };
+
+            var permissionsDetail = permissions.Select(p => new PermissionDetail
+            {
+                Id = p.Id,
+                NombreEmpleado = p.NombreEmpleado,
+                ApellidoEmpleado = p.ApellidoEmpleado,
+                TipoPermiso = p.TipoPermiso,
+                FechaPermiso = p.FechaPermiso,
+                TipoPermisoDetalle = p.TipoPermiso == 1 ? permisoAdmin : permisoUser
+
+            }).ToList();
+
+            return permissionsDetail;
         }
 
     }
@@ -44,6 +59,6 @@ namespace n5now_api.Data
     {
         Task<Permission> AddPermission(Permission permission);
         Task<Permission> UpdatePermission(Permission permission);
-        Task<List<Permission>> GetAllPermissionsIncludingType();
+        Task<List<PermissionDetail>> GetAllPermissionsIncludingType();
     }
 }

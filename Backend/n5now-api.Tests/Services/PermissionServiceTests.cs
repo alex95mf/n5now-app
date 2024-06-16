@@ -57,11 +57,11 @@ namespace n5now_api.Tests.Services
         public async Task GetPermissions_ShouldRetrieveAllPermissions()
         {
             // Arrange
-            var permissions = new List<Permission>
+            var permissions = new List<PermissionDetail>
             {
-                new Permission { Id = 1, NombreEmpleado = "Test1", ApellidoEmpleado = "User1", TipoPermiso = 1, FechaPermiso = DateTime.Now },
-                new Permission { Id = 2, NombreEmpleado = "Test2", ApellidoEmpleado = "User2", TipoPermiso = 2, FechaPermiso = DateTime.Now },
-                new Permission { Id = 3, NombreEmpleado = "Test3", ApellidoEmpleado = "User3", TipoPermiso = 1, FechaPermiso = DateTime.Now }
+                new PermissionDetail { Id = 1, NombreEmpleado = "Test1", ApellidoEmpleado = "User1", TipoPermiso = 1, FechaPermiso = DateTime.Now },
+                new PermissionDetail { Id = 2, NombreEmpleado = "Test2", ApellidoEmpleado = "User2", TipoPermiso = 2, FechaPermiso = DateTime.Now },
+                new PermissionDetail { Id = 3, NombreEmpleado = "Test3", ApellidoEmpleado = "User3", TipoPermiso = 1, FechaPermiso = DateTime.Now }
             };
             _mockUnitOfWork.Setup(u => u.PermissionRepository.GetAllPermissionsIncludingType()).ReturnsAsync(permissions);
 
