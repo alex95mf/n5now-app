@@ -1,0 +1,39 @@
+.header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .header-title {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card {
+    background-color: #f8f9fa; /* Very light grey background */
+  }
+  
+  .card-body, .card-footer {
+    color: black;
+  }
+  
+  .card.bg-light {
+    background-color: #f8f9fa !important;
+  }
+  
+  .card.bg-secondary {
+    background-color: #094b85 !important;
+  }
+  
+  .container {
+    margin-bottom: 20px;
+  }
+  
+  .card.shadow-sm {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
