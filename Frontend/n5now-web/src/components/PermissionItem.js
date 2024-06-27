@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { modifyPermission } from '../services/permissionService';
 import ErrorAlert from './ErrorAlert';
+import Spinner from './Spinner';
 
 const PermissionItem = ({ permission, onUpdate }) => {
   const [editing, setEditing] = useState(false);
   const [editedPermission, setEditedPermission] = useState({ ...permission });
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setEditedPermission({ ...editedPermission, [name]: value });
+    setEditedPermission(prev => ({ ...prev, [name]: value }));
   };
 
   const handleEdit = () => {
@@ -18,12 +20,15 @@ const PermissionItem = ({ permission, onUpdate }) => {
 
   const handleUpdate = async () => {
     try {
+      setLoading(true);
       const updatedPermission = await modifyPermission(editedPermission.id, editedPermission);
       onUpdate(updatedPermission);
       setEditing(false);
       setError(null);
     } catch (error) {
       setError(`Error updating permission: ${error.message}`);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,11 +79,13 @@ const PermissionItem = ({ permission, onUpdate }) => {
             <h5 className="mb-1">{permission.nombreEmpleado} {permission.apellidoEmpleado}</h5>
             <p className="mb-1">{permission.tipoPermisoDetalle.description}</p>
             <small>Fecha: {new Date(permission.fechaPermiso).toLocaleDateString()}</small>
-            </div>
+          </div>
         )}
       </div>
       <div className="card-footer">
-        {editing ? (
+        {loading ? (
+          <Spinner />
+        ) : editing ? (
           <div>
             <button className="btn btn-sm btn-success mx-2" onClick={handleUpdate}>
               Guardar cambios
